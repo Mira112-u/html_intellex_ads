@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Флаеры Intellex Mobility - 6 на странице</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 5mm;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 5mm;
+        }
+        
+        .flyer {
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 8mm;
+            position: relative;
+            box-shadow: inset 0 0 0 2px rgba(255,255,255,0.2);
+        }
+        
+        .flyer::before {
+            content: '✂️';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        
+        .flyer-header {
+            text-align: center;
+            margin-bottom: 6mm;
+        }
+        
+        .emoji {
+            font-size: 32px;
+            margin-bottom: 3px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 12px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .features {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 5mm;
+            border-radius: 6px;
+            margin-bottom: 5mm;
+            flex-grow: 1;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+        
+        .features-list li {
+            padding: 2px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .features-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
+        
+        .qr-section {
+            text-align: center;
+            background: white;
+            padding: 5mm;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            margin: 5px auto;
+            display: block;
+            border-radius: 4px;
+        }
+        
+        .bot-name {
+            font-size: 11px;
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 3px;
+            letter-spacing: 0.5px;
+        }
+        
+        .scan-text {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+        
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .page {
+                page-break-after: always;
+            }
+            
+            @page {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Флаер 1 -->
+        <div class="flyer">
+            <div class="flyer-header">
+                <div class="emoji">🚗💨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка за 5 секунд!</div>
+            </div>
+            
+            <div class="features">
+                <ul class="features-list">
+                    <li>Официальные данные ГИБДД</li>
+                    <li>Фото и видео нарушений</li>
+                    <li>Без регистрации</li>
+                    <li>Работает 24/7</li>
+                    <li>Полностью бесплатно</li>
+                </ul>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-text">Сканируй QR-код:</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 2 -->
+        <div class="flyer">
+            <div class="flyer-header">
+                <div class="emoji">🚗💨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка за 5 секунд!</div>
+            </div>
+            
+            <div class="features">
+                <ul class="features-list">
+                    <li>Официальные данные ГИБДД</li>
+                    <li>Фото и видео нарушений</li>
+                    <li>Без регистрации</li>
+                    <li>Работает 24/7</li>
+                    <li>Полностью бесплатно</li>
+                </ul>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-text">Сканируй QR-код:</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 3 -->
+        <div class="flyer">
+            <div class="flyer-header">
+                <div class="emoji">🚗💨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка за 5 секунд!</div>
+            </div>
+            
+            <div class="features">
+                <ul class="features-list">
+                    <li>Официальные данные ГИБДД</li>
+                    <li>Фото и видео нарушений</li>
+                    <li>Без регистрации</li>
+                    <li>Работает 24/7</li>
+                    <li>Полностью бесплатно</li>
+                </ul>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-text">Сканируй QR-код:</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 4 -->
+        <div class="flyer">
+            <div class="flyer-header">
+                <div class="emoji">🚗💨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка за 5 секунд!</div>
+            </div>
+            
+            <div class="features">
+                <ul class="features-list">
+                    <li>Официальные данные ГИБДД</li>
+                    <li>Фото и видео нарушений</li>
+                    <li>Без регистрации</li>
+                    <li>Работает 24/7</li>
+                    <li>Полностью бесплатно</li>
+                </ul>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-text">Сканируй QR-код:</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 5 -->
+        <div class="flyer">
+            <div class="flyer-header">
+                <div class="emoji">🚗💨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка за 5 секунд!</div>
+            </div>
+            
+            <div class="features">
+                <ul class="features-list">
+                    <li>Официальные данные ГИБДД</li>
+                    <li>Фото и видео нарушений</li>
+                    <li>Без регистрации</li>
+                    <li>Работает 24/7</li>
+                    <li>Полностью бесплатно</li>
+                </ul>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-text">Сканируй QR-код:</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 6 -->
+        <div class="flyer">
+            <div class="flyer-header">
+                <div class="emoji">🚗💨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка за 5 секунд!</div>
+            </div>
+            
+            <div class="features">
+                <ul class="features-list">
+                    <li>Официальные данные ГИБДД</li>
+                    <li>Фото и видео нарушений</li>
+                    <li>Без регистрации</li>
+                    <li>Работает 24/7</li>
+                    <li>Полностью бесплатно</li>
+                </ul>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-text">Сканируй QR-код:</div>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

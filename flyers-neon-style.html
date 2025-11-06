@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Неоновые флаеры - 4 на странице</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 8mm;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 8mm;
+            background: #1a1a2e;
+        }
+        
+        .flyer {
+            border: 3px dashed #00ffff;
+            border-radius: 15px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 10mm;
+            position: relative;
+            box-shadow: 
+                0 0 20px rgba(0, 255, 255, 0.3),
+                inset 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        
+        .flyer::before {
+            content: '✂️ ВЫРЕЗАТЬ';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 10px;
+            opacity: 0.6;
+            color: #00ffff;
+            font-weight: bold;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 8mm;
+            position: relative;
+        }
+        
+        .neon-circle {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 5mm;
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 20px rgba(255, 0, 255, 0.6),
+                0 0 40px rgba(0, 255, 255, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .emoji {
+            font-size: 35px;
+        }
+        
+        .title {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            color: #00ffff;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        
+        .promo-box {
+            background: rgba(255, 0, 255, 0.1);
+            border: 2px solid #ff00ff;
+            border-radius: 10px;
+            padding: 6mm;
+            margin-bottom: 8mm;
+            text-align: center;
+            box-shadow: 
+                0 0 15px rgba(255, 0, 255, 0.3),
+                inset 0 0 15px rgba(255, 0, 255, 0.1);
+        }
+        
+        .promo-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff00ff;
+            margin-bottom: 4mm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3mm;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        .feature-item {
+            background: rgba(0, 255, 255, 0.05);
+            padding: 3mm;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            text-align: center;
+        }
+        
+        .feature-item strong {
+            display: block;
+            color: #00ffff;
+            font-size: 12px;
+            margin-bottom: 2px;
+        }
+        
+        .qr-section {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+            padding: 8mm;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 0 20px rgba(255, 0, 255, 0.3),
+                inset 0 0 20px rgba(0, 255, 255, 0.1);
+        }
+        
+        .scan-instruction {
+            font-size: 13px;
+            font-weight: bold;
+            color: #00ffff;
+            margin-bottom: 4mm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+        
+        .qr-box {
+            background: white;
+            padding: 5mm;
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 255, 0.5),
+                0 0 50px rgba(0, 255, 255, 0.3);
+            margin-bottom: 4mm;
+        }
+        
+        .qr-code {
+            width: 100px;
+            height: 100px;
+            display: block;
+            border-radius: 6px;
+        }
+        
+        .bot-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff00ff;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+        }
+        
+        .telegram-hint {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 3mm;
+        }
+        
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+                background: #1a1a2e;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .page {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Флаер 1 -->
+        <div class="flyer">
+            <div class="header">
+                <div class="neon-circle">
+                    <div class="emoji">🚗</div>
+                </div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка в одно касание!</div>
+            </div>
+            
+            <div class="promo-box">
+                <div class="promo-title">⚡ Что получишь:</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>🎯</strong>
+                        Официальные данные
+                    </div>
+                    <div class="feature-item">
+                        <strong>📸</strong>
+                        Фото нарушений
+                    </div>
+                    <div class="feature-item">
+                        <strong>⚡</strong>
+                        За 5 секунд
+                    </div>
+                    <div class="feature-item">
+                        <strong>🎁</strong>
+                        Бесплатно
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-instruction">👇 Сканируй QR-код 👇</div>
+                <div class="qr-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                </div>
+                <div class="bot-name">@intellex_mobility_bot</div>
+                <div class="telegram-hint">или найди в Telegram</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 2 -->
+        <div class="flyer">
+            <div class="header">
+                <div class="neon-circle">
+                    <div class="emoji">🚗</div>
+                </div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка в одно касание!</div>
+            </div>
+            
+            <div class="promo-box">
+                <div class="promo-title">⚡ Что получишь:</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>🎯</strong>
+                        Официальные данные
+                    </div>
+                    <div class="feature-item">
+                        <strong>📸</strong>
+                        Фото нарушений
+                    </div>
+                    <div class="feature-item">
+                        <strong>⚡</strong>
+                        За 5 секунд
+                    </div>
+                    <div class="feature-item">
+                        <strong>🎁</strong>
+                        Бесплатно
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-instruction">👇 Сканируй QR-код 👇</div>
+                <div class="qr-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                </div>
+                <div class="bot-name">@intellex_mobility_bot</div>
+                <div class="telegram-hint">или найди в Telegram</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 3 -->
+        <div class="flyer">
+            <div class="header">
+                <div class="neon-circle">
+                    <div class="emoji">🚗</div>
+                </div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка в одно касание!</div>
+            </div>
+            
+            <div class="promo-box">
+                <div class="promo-title">⚡ Что получишь:</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>🎯</strong>
+                        Официальные данные
+                    </div>
+                    <div class="feature-item">
+                        <strong>📸</strong>
+                        Фото нарушений
+                    </div>
+                    <div class="feature-item">
+                        <strong>⚡</strong>
+                        За 5 секунд
+                    </div>
+                    <div class="feature-item">
+                        <strong>🎁</strong>
+                        Бесплатно
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-instruction">👇 Сканируй QR-код 👇</div>
+                <div class="qr-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                </div>
+                <div class="bot-name">@intellex_mobility_bot</div>
+                <div class="telegram-hint">или найди в Telegram</div>
+            </div>
+        </div>
+        
+        <!-- Флаер 4 -->
+        <div class="flyer">
+            <div class="header">
+                <div class="neon-circle">
+                    <div class="emoji">🚗</div>
+                </div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="subtitle">Проверка в одно касание!</div>
+            </div>
+            
+            <div class="promo-box">
+                <div class="promo-title">⚡ Что получишь:</div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <strong>🎯</strong>
+                        Официальные данные
+                    </div>
+                    <div class="feature-item">
+                        <strong>📸</strong>
+                        Фото нарушений
+                    </div>
+                    <div class="feature-item">
+                        <strong>⚡</strong>
+                        За 5 секунд
+                    </div>
+                    <div class="feature-item">
+                        <strong>🎁</strong>
+                        Бесплатно
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="scan-instruction">👇 Сканируй QR-код 👇</div>
+                <div class="qr-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                </div>
+                <div class="bot-name">@intellex_mobility_bot</div>
+                <div class="telegram-hint">или найди в Telegram</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
