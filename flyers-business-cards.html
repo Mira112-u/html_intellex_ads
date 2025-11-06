@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Флаеры-визитки - 8 на странице</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            padding: 10mm;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 8mm;
+        }
+        
+        .card {
+            border: 2px dashed #999;
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 6mm;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card::before {
+            content: '✂';
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 14px;
+            opacity: 0.4;
+        }
+        
+        .card-left {
+            flex: 1;
+            padding-right: 4mm;
+        }
+        
+        .emoji {
+            font-size: 28px;
+            margin-bottom: 3px;
+        }
+        
+        .title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        .tagline {
+            font-size: 10px;
+            opacity: 0.9;
+            margin-bottom: 4mm;
+            font-weight: 500;
+        }
+        
+        .highlight {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 3mm;
+            border-radius: 6px;
+            font-size: 9px;
+            line-height: 1.4;
+            backdrop-filter: blur(5px);
+        }
+        
+        .highlight strong {
+            display: block;
+            font-size: 10px;
+            margin-bottom: 2px;
+        }
+        
+        .card-right {
+            text-align: center;
+            background: white;
+            padding: 3mm;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .qr-code {
+            width: 60px;
+            height: 60px;
+            display: block;
+            border-radius: 4px;
+        }
+        
+        .bot-name {
+            font-size: 8px;
+            font-weight: bold;
+            color: #f5576c;
+            margin-top: 2mm;
+            letter-spacing: 0.3px;
+        }
+        
+        @media print {
+            body {
+                width: 210mm;
+                height: 297mm;
+            }
+            
+            .page {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Карточка 1 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 2 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 3 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 4 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 5 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 6 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 7 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+        
+        <!-- Карточка 8 -->
+        <div class="card">
+            <div class="card-left">
+                <div class="emoji">🚨</div>
+                <div class="title">Штрафы ГИБДД</div>
+                <div class="tagline">Проверка в Telegram!</div>
+                <div class="highlight">
+                    <strong>✓ За 5 секунд</strong>
+                    Без регистрации и SMS
+                </div>
+            </div>
+            <div class="card-right">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/intellex_mobility_bot" alt="QR" class="qr-code">
+                <div class="bot-name">@intellex_mobility_bot</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
