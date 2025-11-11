@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сертификат регистрации - @intellex_mobility_bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background: #fff;
+            color: #000;
+            line-height: 1.6;
+            padding: 20mm;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+
+        .document {
+            border: 3px solid #000;
+            padding: 15mm;
+            position: relative;
+            min-height: 250mm;
+        }
+
+        .corner-ornament {
+            position: absolute;
+            width: 30mm;
+            height: 30mm;
+            border: 2px solid #000;
+        }
+
+        .corner-ornament.top-left {
+            top: 5mm;
+            left: 5mm;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .corner-ornament.top-right {
+            top: 5mm;
+            right: 5mm;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-ornament.bottom-left {
+            bottom: 5mm;
+            left: 5mm;
+            border-right: none;
+            border-top: none;
+        }
+
+        .corner-ornament.bottom-right {
+            bottom: 5mm;
+            right: 5mm;
+            border-left: none;
+            border-top: none;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 10mm;
+            padding-bottom: 5mm;
+            border-bottom: 2px solid #000;
+        }
+
+        .flag {
+            font-size: 48px;
+            margin-bottom: 5mm;
+            line-height: 1;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 3mm;
+            text-transform: uppercase;
+        }
+
+        .organization {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 2mm;
+        }
+
+        .sub-title {
+            font-size: 12px;
+            color: #333;
+            font-style: italic;
+        }
+
+        .title {
+            text-align: center;
+            margin: 8mm 0;
+        }
+
+        .title h1 {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 3mm;
+        }
+
+        .doc-number {
+            font-size: 14px;
+            color: #333;
+            margin-top: 2mm;
+        }
+
+        .content {
+            margin: 8mm 0;
+            text-align: justify;
+            font-size: 14px;
+        }
+
+        .content p {
+            margin-bottom: 5mm;
+            text-indent: 10mm;
+        }
+
+        .content p.no-indent {
+            text-indent: 0;
+        }
+
+        .bot-name {
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: underline;
+            font-family: 'Courier New', monospace;
+        }
+
+        .info-table {
+            width: 100%;
+            margin: 8mm 0;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 3mm;
+            border: 1px solid #000;
+            font-size: 13px;
+        }
+
+        .info-table td:first-child {
+            width: 40%;
+            font-weight: bold;
+            background: #f5f5f5;
+        }
+
+        .stamp-section {
+            margin-top: 10mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .signature-block {
+            text-align: left;
+            flex: 1;
+        }
+
+        .signature-line {
+            border-bottom: 2px solid #000;
+            width: 60mm;
+            margin-top: 15mm;
+            margin-bottom: 2mm;
+        }
+
+        .signature-label {
+            font-size: 11px;
+            color: #333;
+            font-style: italic;
+        }
+
+        .qr-section {
+            text-align: center;
+            flex: 0 0 auto;
+            margin-left: 10mm;
+        }
+
+        .qr-code {
+            width: 25mm;
+            height: 25mm;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2mm;
+            background: #fff;
+        }
+
+        .qr-label {
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        .date-time {
+            text-align: right;
+            font-size: 12px;
+            margin-bottom: 5mm;
+            font-style: italic;
+        }
+
+        .amount-highlight {
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 10mm;
+            padding-top: 5mm;
+            border-top: 2px solid #000;
+            text-align: center;
+            font-size: 11px;
+            color: #333;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .document {
+                border: 3px solid #000;
+                page-break-after: avoid;
+            }
+
+            .info-table td:first-child {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                background: #f5f5f5 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
+
+        <div class="header">
+            <div class="flag">🇹🇯</div>
+            <div class="logo">IT-PARK</div>
+            <div class="organization">Информационно-Технологический Парк Таджикистана</div>
+            <div class="sub-title">Центр регистрации и сертификации цифровых продуктов</div>
+        </div>
+
+        <div class="date-time">
+            11 ноября 1925 года, 17:00
+        </div>
+
+        <div class="title">
+            <h1>Сертификат Регистрации</h1>
+            <div class="doc-number">№ TJ-BOT-1925-1111-001</div>
+        </div>
+
+        <div class="content">
+            <p>
+                Настоящим подтверждается, что в соответствии с требованиями законодательства Республики Таджикистан о регистрации цифровых продуктов и телекоммуникационных сервисов, в Информационно-Технологическом Парке была проведена полная процедура регистрации и сертификации автоматизированного Telegram-бота.
+            </p>
+
+            <p>
+                Зарегистрированный цифровой продукт представляет собой автоматизированный Telegram-магазин, предназначенный для предоставления информационных услуг по проверке административных штрафов и нарушений правил дорожного движения на территории Республики Таджикистан.
+            </p>
+        </div>
+
+        <table class="info-table">
+            <tr>
+                <td>Наименование бота</td>
+                <td><span class="bot-name">@intellex_mobility_bot</span></td>
+            </tr>
+            <tr>
+                <td>Тип сервиса</td>
+                <td>Telegram-магазин / Информационная система проверки штрафов ГИБДД</td>
+            </tr>
+            <tr>
+                <td>Дата регистрации</td>
+                <td>11 ноября 1925 года</td>
+            </tr>
+            <tr>
+                <td>Время регистрации</td>
+                <td>17:00 (GMT+5)</td>
+            </tr>
+            <tr>
+                <td>Стоимость регистрации</td>
+                <td><span class="amount-highlight">554 сомони 82 дирама</span> (с учетом налогов)</td>
+            </tr>
+            <tr>
+                <td>Способ оплаты</td>
+                <td>Банковское приложение "Душанбе Сити" (DC)</td>
+            </tr>
+            <tr>
+                <td>Статус оплаты</td>
+                <td>✓ ОПЛАЧЕНО</td>
+            </tr>
+        </table>
+
+        <div class="content">
+            <p>
+                В процессе регистрации была проведена комплексная техническая проверка и модерация функционала бота на соответствие стандартам безопасности, защиты персональных данных и требованиям платформы Telegram. Бот успешно прошел все этапы верификации и допущен к коммерческой эксплуатации.
+            </p>
+
+            <p class="no-indent" style="font-weight: bold; text-align: center; margin-top: 8mm; font-size: 15px;">
+                ✓ БОТ ОФИЦИАЛЬНО ЗАРЕГИСТРИРОВАН И ГОТОВ К РАБОТЕ
+            </p>
+
+            <p>
+                Данная регистрация обеспечивает защиту от блокировки со стороны платформы Telegram и подтверждает легитимность коммерческой деятельности цифрового продукта на территории Республики Таджикистан.
+            </p>
+        </div>
+
+        <div class="stamp-section">
+            <div class="signature-block">
+                <div style="font-size: 13px; margin-bottom: 3mm;">
+                    <strong>Директор IT-Park</strong>
+                </div>
+                <div class="signature-line"></div>
+                <div class="signature-label">(подпись и печать)</div>
+            </div>
+
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://it-park.tj" 
+                         alt="QR Code" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="qr-label">it-park.tj</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>IT-Park Tajikistan</strong> | Душанбе, Республика Таджикистан</p>
+            <p>Официальный регистратор цифровых продуктов и телекоммуникационных сервисов</p>
+            <p style="margin-top: 3mm;">www.it-park.tj | info@it-park.tj</p>
+        </div>
+    </div>
+</body>
+</html>
